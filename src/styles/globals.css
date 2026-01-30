@@ -1,0 +1,108 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #020617;
+  color: #67e8f9;
+  font-family: 'JetBrains Mono', monospace;
+  overflow: hidden;
+}
+
+/* ===== BACKGROUND GRID ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(34,211,238,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,211,238,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -2;
+}
+
+/* ===== GLOW NOISE ===== */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(34,211,238,0.15), transparent 60%);
+  z-index: -1;
+}
+
+
+html,
+body {
+  background-color: #020617;
+  color: #e5e7eb;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
+}
+
+.scanline {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 255, 255, 0.05) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.glow {
+  box-shadow:
+    0 0 10px rgba(34, 211, 238, 0.25),
+    0 0 30px rgba(34, 211, 238, 0.15);
+}
+
+.panel {
+  background: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.9),
+    rgba(2, 6, 23, 0.9)
+  );
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.text-neon {
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMjAnIGhlaWdodD0nMTIwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC44Jy8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9JzEyMCcgaGVpZ2h0PScxMjAnIGZpbHRlcj0ndXJsKCUyM24pJy8+PC9zdmc+");
+}
+canvas {
+  filter: drop-shadow(0 0 6px rgba(0, 200, 255, 0.25));
+}
+
+/* === CUSTOM SCROLLBAR (CYBER STYLE) === */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(2, 6, 23, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #22d3ee,
+    #0ea5e9
+  );
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #67e8f9,
+    #38bdf8
+  );
+}
+
