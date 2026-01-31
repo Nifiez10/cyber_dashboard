@@ -55,7 +55,6 @@ export function Terminal() {
           pushLog("- help");
           pushLog("- status");
           pushLog("- clear");
-          pushLog("- alya");
           break;
 
         case "status":
