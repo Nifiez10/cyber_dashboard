@@ -8,13 +8,19 @@ export default function App() {
   const [booting, setBooting] = useState(true);
 
   return (
-    <>
-      {/* BACKGROUND */}
+    <div className="relative w-screen h-screen overflow-hidden">
+      {/* BACKGROUND LAYERS */}
       <MatrixBackground />
       <NoiseOverlay />
 
       {/* FOREGROUND */}
-      {booting ? <Boot onFinish={() => setBooting(false)} /> : <Dashboard />}
-    </>
+      <div className="relative z-20 w-full h-full">
+        {booting ? (
+          <Boot onFinish={() => setBooting(false)} />
+        ) : (
+          <Dashboard />
+        )}
+      </div>
+    </div>
   );
 }
